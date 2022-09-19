@@ -1,0 +1,142 @@
+form {
+  display: grid;
+  grid-gap: 2rem;
+  width: min(100%, var(--page-width));
+  margin: auto;
+}
+
+form fieldset {
+  display: grid;
+  grid-gap: .5em 1em;
+  padding: 1em;
+}
+
+.details {
+  grid-template-columns: auto 1fr;
+}
+
+.details input {
+  padding: .2em .5em;
+  color: var(--clr-purp);
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid var(--clr-purp);
+}
+
+input[name=customer_name] {
+  cursor: pointer;
+}
+
+.items th, .items td {
+  padding: .3em .5em;
+  background-color: #0001;
+}
+
+.items input {
+  border: 0;
+  outline: 0;
+  padding: .3em .5em;
+}
+
+.description {
+  width: 100%;
+}
+
+.unit_price, .quantity {
+  width: 5em;
+}
+
+.price, .total {
+  width: 7em;
+  text-align: right;
+  font-family: monospace;
+  background-color: transparent;
+}
+
+.items button.remove {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.items tfoot button {
+  display: grid;
+  width: 100%;
+  padding: .2em;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.items tfoot img {
+  height: 1em;
+  margin: auto;
+}
+
+button[type=submit] {
+  padding: .5rem;
+  background-color: var(--clr-purp);
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: opacity .2s;
+} button[type=submit]:hover {
+  opacity: .8;
+}
+
+.customer-selection {
+  position: absolute;
+  display: none;
+  grid-template-rows: auto 1fr;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, calc(var(--page-width) + 2px));
+  min-height: 100vh;
+  background-color: #fff;
+  opacity: 0;
+  animation: fade-in .5s forwards;
+}
+
+.customer-selection input {
+  border: 2px solid var(--clr-purp);
+  outline: 0;
+  margin: 1rem;
+  padding: .3em .5em;
+  font-size: 1.2em;
+}
+
+.customer-selection ul {
+  display: grid;
+  grid-gap: .5rem;
+  list-style-type: none;
+  margin-bottom: auto;
+}
+
+.customer-selection li {
+  display: grid;
+}
+
+.customer-selection button {
+  background-color: var(--clr-purp);
+  border: 0;
+  outline: 0;
+  border-radius: .5rem;
+  text-align: left;
+  padding: .5rem 1rem;
+  font-size: 1.2em;
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
+}

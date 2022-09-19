@@ -1,0 +1,80 @@
+form {
+  display: grid;
+  grid-gap: 2em;
+  width: min(100%, var(--page-width));
+  margin: auto;
+}
+
+form fieldset {
+  display: grid;
+  grid-gap: .5em 1em;
+  padding: 1em;
+}
+
+.details {
+  grid-template-columns: auto 1fr;
+}
+
+.details input, .details select {
+  padding: .2em .5em;
+  color: var(--clr-purp);
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid var(--clr-purp);
+  outline: 0;
+}
+
+.details input[readonly], .details select[readonly] {
+  border: 0;
+}
+
+.items th, .items td {
+  padding: .3em .5em;
+  background-color: #0001;
+}
+
+.items input {
+  border: 0;
+  outline: 0;
+  padding: .3em .5em;
+  background-color: transparent;
+}
+
+.description {
+  width: 100%;
+}
+
+.unit_price, .quantity {
+  width: 5em;
+} .price, .total {
+  width: 6em;
+}
+
+.items tfoot td, .items tfoot input {
+  font-weight: bold;
+}
+
+.items tfoot td {
+  background-color: #0002;
+}
+
+fieldset.buttons {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  border: 0;
+  padding-inline: 0;
+}
+
+button {
+  padding: .5em;
+  background-color: var(--clr-purp);
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: .5em;
+  cursor: pointer;
+  transition: opacity .2s;
+} button:hover {
+  opacity: .8;
+}
