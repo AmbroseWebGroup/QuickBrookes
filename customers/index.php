@@ -1,11 +1,10 @@
 <?php
 
+require_once '../../users/init.php';
+if (!securePage($_SERVER['PHP_SELF'])){die();}
+
 include_once("../db/db.php");
 session_start();
-
-if (!isset($_SESSION['auth']) || !$_SESSION['auth']) {
-  die("Not authorised");
-}
 
 $db = new Database();
 
@@ -33,7 +32,7 @@ $customers = $db->customers->selectAll("");
 </head>
 <body>
   <header>
-    <img src="https://ambroseweb.co.uk/imgs/awg-rectangle-logo.png" alt="Ambrose Web Logo" />
+    <a href="https://platform.ambroseweb.co.uk"><img src="https://ambroseweb.co.uk/imgs/awg-rectangle-logo.png" alt="Ambrose Web Logo" /></a>
     <h1>QuickBrookes</h1>
   </header>
 

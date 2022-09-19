@@ -29,11 +29,15 @@ header {
   width: 100%;
 }
 
+header a {
+  display: block;
+  margin: 0 auto;
+}
+
 header img {
   width: min(100%, var(--page-width));
   height: 10em;
   object-fit: contain;
-  margin: 0 auto;
 }
 
 header h1 {

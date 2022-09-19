@@ -1,11 +1,10 @@
 <?php
 
+require_once '../../users/init.php';
+if (!securePage($_SERVER['PHP_SELF'])){die();}
+
 include_once("../db/db.php");
 session_start();
-
-if (!isset($_SESSION['auth']) || !$_SESSION['auth']) {
-  die("Not authorised");
-}
 
 $db = new Database();
 

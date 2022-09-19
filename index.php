@@ -1,17 +1,10 @@
 <?php
 
+require_once '../users/init.php';
+if (!securePage($_SERVER['PHP_SELF'])){die();}
+
 include_once("./db/db.php");
 session_start();
-
-if (isset($_GET['key']) && $_GET['key'] == "YCQCjA9jv$9e34D2p!TG!6n94tx8") {
-  $_SESSION['auth'] = true;
-} else if (isset($_GET['key'])) {
-  $_SESSION['auth'] = false;
-}
-
-if (!isset($_SESSION['auth']) || !$_SESSION['auth']) {
-  die("Not authorised");
-}
 
 $db = new Database();
 $invoices = $db->invoices->selectAll();
@@ -37,7 +30,7 @@ $invoices = $_invoices;
 </head>
 <body>
   <header>
-    <img src="https://ambroseweb.co.uk/imgs/awg-rectangle-logo.png" alt="Ambrose Web Logo" />
+    <a href="https://platform.ambroseweb.co.uk"><img src="https://ambroseweb.co.uk/imgs/awg-rectangle-logo.png" alt="Ambrose Web Logo" /></a>
     <h1>QuickBrookes</h1>
   </header>
   <nav>
